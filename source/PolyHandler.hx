@@ -94,7 +94,7 @@ class PolyHandler {
 		output.addType("txt", TextFileFormat.LINES);
 		output.addType("hx", TextFileFormat.PLAINTEXT);
 		output.addType("hxs", TextFileFormat.PLAINTEXT);
-		output.addType(";ua", TextFileFormat.PLAINTEXT);
+		output.addType("lua", TextFileFormat.PLAINTEXT);
 		return output != null ? output : null;
 	}
 
