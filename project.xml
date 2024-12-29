@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project xmlns="http://lime.openfl.org/project/1.0.4" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://lime.openfl.org/project/1.0.4 http://lime.openfl.org/xsd/project-1.0.4.xsd">
+
+    <!-- Application Settings -->
+    <app title="Custom Flixel Template" file="CFT" main="Main" version="1.0.0" company="JoaTH Team" />
+    <app preloader="flixel.system.FlxPreloader" />
+    <set name="SWF_VERSION" value="11.8" />
+
+    <!-- Window Settings -->
+    <window width="640" height="480" fps="60" background="#000000" hardware="true" vsync="false" />
+    <window if="html5" resizable="true" />
+    <window if="desktop" orientation="landscape" fullscreen="false" resizable="true" />
+    <window if="mobile" orientation="landscape" fullscreen="true" width="0" height="0" />
+
+    <!-- Path Settings -->
+    <set name="BUILD_DIR" value="export/debug" if="debug" />
+    <set name="BUILD_DIR" value="export/release" unless="debug" />
+    <source path="source" />
+    <assets path="assets" />
+    <assets path="mods" embed="false" />
+
+    <!-- Libraries -->
+    <haxelib name="flixel" />
+    <haxelib name="flixel-addons" />
+    <haxelib name="flixel-ui" />
+    <haxelib name="linc_luajit" />
+    <haxelib name="hscript" />
+    <haxelib name="polymod" />
+
+    <!-- Haxedefines -->
+    <haxedef name="FLX_NO_HEALTH" />
+    <haxedef name="FLX_NO_MOUSE" if="mobile" />
+    <haxedef name="FLX_NO_KEYBOARD" if="mobile" />
+    <haxedef name="FLX_NO_TOUCH" if="desktop" />
+    <haxedef name="FLX_NO_DEBUG" unless="debug" />
+    <haxedef name="NAPE_RELEASE_BUILD" unless="debug" />
+    <haxedef name="message.reporting" value="pretty" />
+    <haxedef name="hscriptPos" />
+    <haxeflag name="--macro" value="include('flixel', true, ['flixel.addons.editors.spine.*', 'flixel.addons.nape.*', 'flixel.system.macros.*'])" />
+
+    <!-- Custom -->
+    <haxedef name="POLYMOD_SCRIPT_EXT" value=".hxs"/>
+    <haxedef name="POLYMOD_MOD_METADATA_FILE" value="meta.json" />
+    <haxedef name="POLYMOD_MOD_ICON_FILE" value="icon.png" />
+    <haxedef name="POLYMOD_DEBUG" value="true" if="debug" />
+
+    <launchImage path="assets/images/logo.png" />
+    <launchStoryboard template="splash.storyboard" assetsPath="assets/images/logo.png" RGB="0x000000" contentMode="center" />
+</project>
