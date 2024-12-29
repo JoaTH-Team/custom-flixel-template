@@ -1,4 +1,4 @@
-package modding;
+package;
 
 import polymod.Polymod;
 import polymod.backends.PolymodAssets.PolymodAssetType;
