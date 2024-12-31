@@ -22,9 +22,10 @@ class Main extends Sprite {
 
     public function new() {
         super();
-        PolyHandler.reload();
 
         game = new FlxGame(gameConfig.width, gameConfig.height, gameConfig.state, gameConfig.fps, gameConfig.fps, gameConfig.skipSplash, gameConfig.enableFullScreen);
         addChild(game);
+
+        PolyHandler.reload(); // idk is work??
     }
 }
