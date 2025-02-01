@@ -3,7 +3,7 @@
     xsi:schemaLocation="http://lime.openfl.org/project/1.0.4 http://lime.openfl.org/xsd/project-1.0.4.xsd">
 
     <!-- Application Settings -->
-    <app title="Custom Flixel Template" file="CFT" main="Main" version="1.0.0" company="JoaTH Team" />
+    <app title="Custom Flixel Template" file="CFT" main="Main" version="1.0.0" company="Your Company" />
     <app preloader="flixel.system.FlxPreloader" />
     <set name="SWF_VERSION" value="11.8" />
 
@@ -17,16 +17,16 @@
     <set name="BUILD_DIR" value="export/debug" if="debug" />
     <set name="BUILD_DIR" value="export/release" unless="debug" />
     <source path="source" />
-    <assets path="assets" />
-    <assets path="mods" embed="false" />
+    <assets path="assets" embed="false" />
+    <assets path="mods" embed="false" if="allowMods" />
 
     <!-- Libraries -->
     <haxelib name="flixel" />
     <haxelib name="flixel-addons" />
     <haxelib name="flixel-ui" />
-    <haxelib name="linc_luajit" />
-    <haxelib name="hscript" />
-    <haxelib name="polymod" />
+    <haxelib name="linc_luajit" if="allowLua" />
+    <haxelib name="hscript" if="allowScript" />
+    <haxelib name="polymod" if="allowMods"/>
 
     <!-- Haxedefines -->
     <haxedef name="FLX_NO_HEALTH" />
@@ -38,13 +38,13 @@
     <haxedef name="message.reporting" value="pretty" />
     <haxedef name="hscriptPos" />
     <haxeflag name="--macro" value="include('flixel', true, ['flixel.addons.editors.spine.*', 'flixel.addons.nape.*', 'flixel.system.macros.*'])" />
+    <define name="allowLua" if="cpp" />
+    <define name="allowMods" />
+    <define name="allowScript" />
 
     <!-- Custom -->
-    <haxedef name="POLYMOD_SCRIPT_EXT" value=".hxs"/>
-    <haxedef name="POLYMOD_MOD_METADATA_FILE" value="meta.json" />
-    <haxedef name="POLYMOD_MOD_ICON_FILE" value="icon.png" />
-    <haxedef name="POLYMOD_DEBUG" value="true" if="debug" />
-
-    <launchImage path="assets/images/logo.png" />
-    <launchStoryboard template="splash.storyboard" assetsPath="assets/images/logo.png" RGB="0x000000" contentMode="center" />
+    <haxedef name="POLYMOD_SCRIPT_EXT" value=".hxs" if="allowMods" />
+    <haxedef name="POLYMOD_MOD_METADATA_FILE" value="meta.json" if="allowMods" />
+    <haxedef name="POLYMOD_MOD_ICON_FILE" value="icon.png" if="allowMods" />
+    <haxedef name="POLYMOD_DEBUG" value="true" if="debug" if="allowMods "/>
 </project>
