@@ -34,10 +34,10 @@
     <haxedef name="FLX_NO_DEBUG" unless="debug" />
     <haxedef name="NAPE_RELEASE_BUILD" unless="debug" />
     <haxedef name="message.reporting" value="pretty" />
-    <haxedef name="hscriptPos" />
+    <haxedef name="hscriptPos" if="allowScript" />
     <haxeflag name="--macro" value="include('flixel', true, ['flixel.addons.editors.spine.*', 'flixel.addons.nape.*', 'flixel.system.macros.*'])" />
     <define name="allowLua" if="cpp" />
-    <define name="allowMods" />
+    <define name="allowMods" if="polymod" />
     <define name="allowScript" />
 
     <!-- Custom -->
