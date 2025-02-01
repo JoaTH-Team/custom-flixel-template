@@ -1,3 +1,4 @@
+#if allowLua
 package script;
 
 import llua.Convert;
@@ -95,3 +96,4 @@ class LuaScript extends FlxBasic
         Lua.setglobal(lua, name);
     }
 }
+#end

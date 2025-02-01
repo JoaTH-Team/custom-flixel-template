@@ -1,3 +1,4 @@
+#if allowScript
 package script;
 
 import flixel.FlxBasic;
@@ -137,3 +138,4 @@ class HScript extends FlxBasic
 		interp = null;
 	}    
 }
+#end

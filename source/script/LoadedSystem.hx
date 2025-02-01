@@ -4,6 +4,7 @@ import sys.FileSystem;
 using StringTools;
 
 class LoadedSystem {
+	#if allowLua
     public static var luaArray:Array<LuaScript> = [];
     public static function loadLuaScript(?endWith:String = ".lua"):Void {
 		var foldersToCheck:Array<String> = [Paths.file('scripts/')];
@@ -19,7 +20,9 @@ class LoadedSystem {
 			}
 		}
     }
+	#end
 
+	#if allowScript
     public static var hscriptArray:Array<HScript> = [];
     public static function loadHScript(?endWith:String = ".hx"):Void {
         var foldersToCheck:Array<String> = [Paths.file('scripts/')];
@@ -35,4 +38,5 @@ class LoadedSystem {
 			}
 		}
     }
+	#end
 }

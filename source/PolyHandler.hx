@@ -1,3 +1,4 @@
+#if allowMods
 package;
 
 import flixel.FlxG;
@@ -118,3 +119,4 @@ class PolyHandler {
 		}
 	}
 }
+#end

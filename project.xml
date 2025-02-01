@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<project xmlns="http://lime.openfl.org/project/1.0.4" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://lime.openfl.org/project/1.0.4 http://lime.openfl.org/xsd/project-1.0.4.xsd">
-
+<project>
     <!-- Application Settings -->
     <app title="Custom Flixel Template" file="CFT" main="Main" version="1.0.0" company="Your Company" />
     <app preloader="flixel.system.FlxPreloader" />
@@ -46,5 +44,5 @@
     <haxedef name="POLYMOD_SCRIPT_EXT" value=".hxs" if="allowMods" />
     <haxedef name="POLYMOD_MOD_METADATA_FILE" value="meta.json" if="allowMods" />
     <haxedef name="POLYMOD_MOD_ICON_FILE" value="icon.png" if="allowMods" />
-    <haxedef name="POLYMOD_DEBUG" value="true" if="debug" if="allowMods "/>
+    <haxedef name="POLYMOD_DEBUG" value="true" if="debug" if="allowMods" />
 </project>

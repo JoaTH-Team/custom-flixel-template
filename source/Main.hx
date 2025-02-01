@@ -26,6 +26,8 @@ class Main extends Sprite {
         game = new FlxGame(gameConfig.width, gameConfig.height, gameConfig.state, gameConfig.fps, gameConfig.fps, gameConfig.skipSplash, gameConfig.enableFullScreen);
         addChild(game);
 
+        #if allowMods
         PolyHandler.reload(); // idk is work??
+        #end
     }
 }
